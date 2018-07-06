@@ -2,7 +2,7 @@ import mercuryImage from './assets/images/mercury.jpg'
 import venusImage from './assets/images/venus.jpg'
 import earthImage from './assets/images/earth.jpg'
 import earthBumpImage from './assets/images/earth-bump.jpg'
-import earthWaterImage from './assets/images/earth-water.jpg'
+import earthWaterImage from './assets/images/earth-water.png'
 import earthCloudsImage from './assets/images/earth-clouds.png'
 import moonImage from './assets/images/moon.jpg'
 import marsImage from './assets/images/mars.jpg'
@@ -13,7 +13,7 @@ import uranusImage from './assets/images/uranus.jpg'
 import neptuneImage from './assets/images/neptune.jpg'
 import starsImage from './assets/images/stars.png'
 
-let planets = {
+let Planets = {
   mercury: {
     name: 'mercury',
     type: 'planet',
@@ -76,7 +76,7 @@ let planets = {
     radiusRatio: 1,
     segments: 50,
     images: [
-      earthCloudsImage,
+      earthCloudsImage
     ],
     position: {
       x: 0,
@@ -242,4 +242,4 @@ let planets = {
   }
 }
 
-export default planets
+export default Planets
