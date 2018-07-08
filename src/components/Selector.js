@@ -1,33 +1,46 @@
 import React, { Component } from 'react'
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 
-export default class Menu extends Component {
+export default class Selector extends Component {
+  constructor (props) {
+    super(props)
+
+    this.toggle = this.toggle.bind(this)
+    this.state = {
+      dropdownOpen: false
+    }
+  }
+
+  toggle () {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    })
+  }
+
   render () {
     return (
-      <div className='container card-wrapper'>
+      <div className='planet-button-wrapper'>
         <div className='row'>
-          <div className='offset-md-6 col-md-6'>
-            <div className='card'>
-              <div className='card-body'>
-                <h5 className='card-title' />
-                <h6 className='card-subtitle mb-2 text-muted'>Information</h6>
-                <p className='card-text'>
-                  Distance from Sun: 67.24 million mi
-                  <br /> Radius: 3,760 mi
-                  <br /> Orbital period: 225 days
-                  <br /> Mass: 4.867 × 10^24 kg (0.815 M⊕)
-                  <br /> Equatorial rotation velocity: 6.52 km/h (1.81 m/s)
-                  <br /> Average orbital speed‎: ‎35.02 km/s
-                  <br /> Surface gravity‎: ‎8.87 m/s2; 0.904 g
-                  <br /> Surface area‎: ‎4.6023×108 km2
-                  <br />
-                </p>
-                <button type='button' className='btn btn-outline-danger visit-btn'>
-                  <i className='fas fa-angle-right' />
-                  <span className='visit-span' />
-                  <i className='fas fa-angle-left' />
-                </button>
-              </div>
-            </div>
+          <div className='col-12'>
+            <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <DropdownToggle className='btn btn-outline-danger'>
+                <i className='fas fa-angle-right' />
+                  Select Planet 
+                <i className='fas fa-angle-left' />
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem header>Planets</DropdownItem>
+                <DropdownItem className='planet-btn' data-name='mercury'>Mercury</DropdownItem>
+                <DropdownItem className='planet-btn' data-name='venus'>Venus</DropdownItem>
+                <DropdownItem className='planet-btn' data-name='earth'>Earth</DropdownItem>
+                <DropdownItem className='planet-btn' data-name='moon'>Moon</DropdownItem>
+                <DropdownItem className='planet-btn' data-name='mars'>Mars</DropdownItem>
+                <DropdownItem className='planet-btn' data-name='jupiter'>Jupiter</DropdownItem>
+                <DropdownItem className='planet-btn' data-name='saturn'>Saturn</DropdownItem>
+                <DropdownItem className='planet-btn' data-name='uranus'>Uranus</DropdownItem>
+                <DropdownItem className='planet-btn' data-name='neptune'>Neptune</DropdownItem>
+              </DropdownMenu>
+            </ButtonDropdown>
           </div>
         </div>
         <style jsx>{`

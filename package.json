@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "@tweenjs/tween.js": "^17.2.0",
+    "bootstrap": "^4.1.1",
+    "bootswatch": "^4.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
     "popmotion": "^8.3.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -11,6 +15,7 @@
     "react-scripts": "1.1.4",
     "react-three-renderer": "^3.2.4",
     "react-three-renderer-objects": "0.0.6",
+    "reactstrap": "^6.2.0",
     "standard": "^11.0.1",
     "three": "^0.94.0"
   },
