@@ -25,10 +25,10 @@ export default class Selector extends Component {
             <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
               <DropdownToggle className='btn btn-outline-danger'>
                 <i className='fas fa-angle-right' />
-                  Select Planet 
+                  Select Planet
                 <i className='fas fa-angle-left' />
               </DropdownToggle>
-              <DropdownMenu>
+              <DropdownMenu className='drop-down'>
                 <DropdownItem header>Planets</DropdownItem>
                 <DropdownItem className='planet-btn' data-name='mercury'>Mercury</DropdownItem>
                 <DropdownItem className='planet-btn' data-name='venus'>Venus</DropdownItem>
@@ -70,7 +70,7 @@ export default class Selector extends Component {
           
           .dropdown-menu {
             background: rgba(0, 0, 0, 0.5);
-            width: 177px;
+            width: 155px;
             color: #fff;
           }
           

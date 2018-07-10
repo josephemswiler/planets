@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as THREE from 'three'
 import Planets from './Planets'
+import NewPlanet from './NewPlanet'
 // import mercuryImage from './assets/images/mercury.jpg'
 // import posed from 'react-pose'
 // import { easing, tween } from 'popmotion'
@@ -46,13 +47,15 @@ export default class Space extends Component {
         Math.PI * 2
       ),
       new THREE.MeshPhongMaterial({
-        map: new THREE.TextureLoader().load(Planets.mercury.images[0]),
-        // bumpMap: new THREE.TextureLoader().load(null),
+        map: new THREE.TextureLoader().load(Planets.earth.images[0]),
+        bumpMap: new THREE.TextureLoader().load(Planets.earth.images[1]),
         bumpScale: 0.1,
-        // specularMap: new THREE.TextureLoader().load(null),
+        specularMap: new THREE.TextureLoader().load(Planets.earth.images[2]),
         specular: new THREE.Color('grey')
       })
     )
+    // const cube = NewPlanet
+    // cube.rotation = 0
 
     camera.position.z = this.state.position.z
 
@@ -60,10 +63,10 @@ export default class Space extends Component {
     renderer.setClearColor('#000000')
     renderer.setSize(width, height)
 
-    const light = new THREE.DirectionalLight(0xffffff, 1)
+    const light = new THREE.DirectionalLight(0x333333, 1)
     light.position.set(5, 3, 5)
     scene.add(light)
-    scene.add(new THREE.AmbientLight(0x333333))
+    scene.add(new THREE.AmbientLight(0xffffff))
 
     this.scene = scene
     this.camera = camera
@@ -103,8 +106,8 @@ export default class Space extends Component {
   }
 
   animate () {
-    this.cube.rotation.x += 0.01
-    this.cube.rotation.y += 0.01
+    this.cube.rotation.x += 0
+    this.cube.rotation.y += 0.0001
     // TWEEN.update()
     // this.camera.updateProjectionMatrix()
     this.renderScene()
